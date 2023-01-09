@@ -56,8 +56,50 @@ $ pip install -r requirements.txt
 ```
 We used SNN-torch to construct and train SNN   
 github repository: https://github.com/jeshraghian/snntorch
+# Experiment method
+To adjust parameter Ti We change variable Ti (In following code, Ti is referd as time_window)
+```py
+frame_transform = transforms.Compose([transforms.Denoise(filter_time=10000),
+                                      transforms.ToFrame(sensor_size=sensor_size,
+                                                         time_window=10000)
+                                     ])
+```
+To change accumulation method We editted tonic.transform.Toframe function
+```py
+    if "y" in events.dtype.names:
+        frames = np.zeros((len(event_slices), 1, *sensor_size[::-1]), dtype=np.int16)
+        for i, event_slice in enumerate(event_slices):
+            #to reset in to spike output delete ################################## enveloped section
+            ######################################################################
+            time_label = event_slice["t"]
+            time_label[time_label>0] = 0
+            ######################################################################
+            np.add.at(
+                frames,
+                (i, time_label, event_slice["p"].astype(int), event_slice["y"], event_slice["x"]),
+                1,
+            )
+            # normalize section############################
+            # if np.sum(frames[i])==0:
+            #     frames[i] = frames[i]
+            # else :
+            #     frames[i] = frames[i] / (np.sum(frames[i]))
+            ###############################################
 
-# Code 
+        ##########################################################################
+        #frames = frames.reshape((len(event_slices), *sensor_size[::-1]))
+        ##########################################################################
+
+    else:
+        frames = np.zeros(
+            (len(event_slices), sensor_size[2], sensor_size[0]), dtype=np.int16
+        )
+        for i, event_slice in enumerate(event_slices):
+            np.add.at(frames, (i, event_slice["p"].astype(int), event_slice["x"]), 1)
+    return frames
+```
+# Code    
+   
 Use tonic.transforms package to make preprocess filter.
 Using a filter, preprocess the datasets. 
 ```py
