@@ -50,6 +50,7 @@ Voxel grid: A three-dimensional structure in which temporal information of event
 
 # Enviroments
 download requirements.txt
+than execute
 ```py
 $ pip install -r requirements.txt
 ```
