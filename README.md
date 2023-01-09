@@ -127,7 +127,7 @@ class CNN(torch.nn.Module):
  
 ```
 
-
+Train model with surrogate gradient descent. 
 ```py
 for epoch in range(num_epochs):
     torch.save(model.state_dict(), '/home/hubo1024/PycharmProjects/snntorch/model_pt/Nadam_05loss-10000.pt')
