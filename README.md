@@ -16,7 +16,7 @@ Voxel grid: A three-dimensional structure in which temporal information of event
 
 
 
-Pre-processing process based on Voxel grid
+### Pre-processing process based on Voxel grid
 
 
 
@@ -27,7 +27,22 @@ Pre-processing process based on Voxel grid
 2. Event data of each group is accumulated and output based on the time (t) axis.
 ![화면 캡처 2023-01-09 152823](https://user-images.githubusercontent.com/122242141/211251530-73c864bf-b71a-4d79-af8b-e55848ed63ba.png)
 
+
+
+### Methods of accumulating event data based on the t-axis.
+(a) Accumulate event data per pixel
+
+
+
+(b) Event data accumulated per pixel and binarized
+
+
+
+(c) Event data accumulated per pixel and normalized
+
 ![화면 캡처 2023-01-09 153416](https://user-images.githubusercontent.com/122242141/211252154-6e520211-a01e-4d8d-b12d-af4fc4bfa80c.png)
+
+
 
 
 # code
