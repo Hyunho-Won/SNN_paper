@@ -70,8 +70,8 @@ frame_transform = transforms.Compose([transforms.Denoise(filter_time=10000),
                                                          time_window=10000)
                                      ])
 
-trainset = tonic.datasets.NMNIST(save_to='/home/hubo1024/PycharmProjects/snntorch/data/NMNIST', transform=frame_transform, train=True)
-testset = tonic.datasets.NMNIST(save_to='./home/hubo1024/PycharmProjects/snntorch/data/NMNIST', transform=frame_transform, train=False)
+trainset = tonic.datasets.NMNIST(save_to='User_Path', transform=frame_transform, train=True)
+testset = tonic.datasets.NMNIST(save_to='.User_Path', transform=frame_transform, train=False)
 ```
       
 Define CSNN model
@@ -130,7 +130,7 @@ class CNN(torch.nn.Module):
 Train model with surrogate gradient descent. 
 ```py
 for epoch in range(num_epochs):
-    torch.save(model.state_dict(), '/home/hubo1024/PycharmProjects/snntorch/model_pt/Nadam_05loss-10000.pt')
+    torch.save(model.state_dict(), 'User_Path.pt')
     for i, (data, targets) in enumerate(iter(trainloader)):
         data = data.cuda()
         targets = targets.cuda()
@@ -152,7 +152,7 @@ for epoch in range(num_epochs):
 
         if val_cnt == len(trainloader)/2-1:
             val_cnt=0
-            torch.save(model.state_dict(), '/home/hubo1024/PycharmProjects/snntorch/model_pt/Nadam_05loss-10000.pt')
+            torch.save(model.state_dict(), 'User_Path.pt')
             for ii, (v_data, v_targets) in enumerate(iter(valloader)):
                 v_data = v_data.to(device)
                 v_targets = v_targets.to(device)
@@ -170,10 +170,10 @@ for epoch in range(num_epochs):
             plt.plot(acc_hist)
             plt.plot(v_acc_hist)
             plt.legend(['train accuracy', 'validation accuracy'])
-            plt.title("Train, Validation Accuracy-Nadam_05loss-10000")
+            plt.title("Title")
             plt.xlabel("Iteration")
             plt.ylabel("Accuracy")
-            plt.savefig('Nadam_05loss-10000.png')
+            plt.savefig('User_Path.png')
             plt.clf()
             v_acc_sum = v_acc_sum/cnt
 
@@ -196,7 +196,7 @@ for epoch in range(num_epochs):
         print(f"Train Accuracy: {acc * 100:.2f}%")
         print(f"Validation Accuracy: {v_acc_sum * 100:.2f}%\n")
         if index == 1:
-            torch.save(model.state_dict(), '/home/hubo1024/PycharmProjects/snntorch/model_pt/Nadam_05loss-10000.pt')
+            torch.save(model.state_dict(), 'User_Path.pt')
             break
     if index == 1:
         break
