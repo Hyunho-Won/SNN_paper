@@ -2,7 +2,7 @@
 Recently, research on SNN that are expected to have higher energy efficiency than conventional DNN has increased.
 SNN is expected to be efficient in processing event data, which is sparse spatio-temporal data.
 To utilize event data on SNN, pre-processing is required and it has a profound effect on SNN learning. So it is necessary to investigate the effect of the pre-processing method of event data on the learning performance of SNN.
-In this paper, we analyze the change of learning performance according to the event accumulation method and time interval(Ti), which is major variable of voxel grid-based preprocessing.
+In this paper, we analyze the change of learning performance according to the event accumulation method and time interval(T𝑖), which is major variable of voxel grid-based preprocessing.
 
 # SNN
 To design SNN accelerator, We had to study SNN firts.
@@ -10,9 +10,21 @@ And here is the result of our short study
 [An Analysis of Preprocessing Effect on SNN Training with Event Data]
 
 
-# Voxel grid
-A three-dimensional structure in which temporal information of event data is recorded.
+# Pre-processing
+Voxel grid: A three-dimensional structure in which temporal information of event data is recorded.
 
+
+
+
+Pre-processing process based on Voxel grid
+
+
+
+1. As shown in Equation (1), the time step length of raw event data is divided into T𝑖 units to forms event data into groups of output time steps(Tt').
+
+
+
+2. Event data of each group is accumulated and output based on the time (t) axis.
 ![화면 캡처 2023-01-09 152823](https://user-images.githubusercontent.com/122242141/211251530-73c864bf-b71a-4d79-af8b-e55848ed63ba.png)
 
 ![화면 캡처 2023-01-09 153416](https://user-images.githubusercontent.com/122242141/211252154-6e520211-a01e-4d8d-b12d-af4fc4bfa80c.png)
