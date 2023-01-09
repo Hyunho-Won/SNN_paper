@@ -1,6 +1,12 @@
-# An Analysis of Preprocessing Effect on SNN Training with Event Data
+# SNN Hardware Accelerator Project
+This project involves designing a hardware accelerator that can efficiently perform SNN operations.
 
-GitHub repository:https://github.com/whh0503/thesis
+# Part 1
+# Studying SNN
+To design SNN accelerator, We had to study SNN firts.
+And here is the result of our short study 
+[An Analysis of Preprocessing Effect on SNN Training with Event Data]
+
 
 # Introduction
 
