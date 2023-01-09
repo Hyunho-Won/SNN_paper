@@ -11,6 +11,12 @@ And here is the result of our short study
 
 
 # Voxel grid
+A three-dimensional structure in which temporal information of event data is recorded.
+
+![화면 캡처 2023-01-09 152823](https://user-images.githubusercontent.com/122242141/211251530-73c864bf-b71a-4d79-af8b-e55848ed63ba.png)
+
+![화면 캡처 2023-01-09 153416](https://user-images.githubusercontent.com/122242141/211252154-6e520211-a01e-4d8d-b12d-af4fc4bfa80c.png)
+
 
 # code
 ```py
