@@ -64,7 +64,7 @@ frame_transform = transforms.Compose([transforms.Denoise(filter_time=10000),
                                                          time_window=10000)
                                      ])
 ```
-To change accumulation method We editted tonic.transform.Toframe function
+To change accumulation method We editted tonic.transform.Toframe function(snn_torch/lib/python3.9/site-packages/tonic/transforms.py)
 ```py
     if "y" in events.dtype.names:
         frames = np.zeros((len(event_slices), 1, *sensor_size[::-1]), dtype=np.int16)
