@@ -48,27 +48,8 @@ Voxel grid: A three-dimensional structure in which temporal information of event
 <img src = "https://user-images.githubusercontent.com/122242141/211252154-6e520211-a01e-4d8d-b12d-af4fc4bfa80c.png" width="70%" height="70%">
 
 
-# code
+# Enviroments
+download requirements.txt
 ```py
-import torch
-import torchvision.datasets as dsets
-import torchvision.transforms as transforms
-import torch.nn.init
-import os
-import torch.nn as nn
-import time
-import matplotlib.pyplot as plt
-import tonic.transforms as transforms
-import tonic
-import numpy as np
-import snntorch as snn
-from snntorch import surrogate
-from snntorch import functional as SF
-from snntorch import spikeplot as splt
-from snntorch import utils
-import torch.nn as nn
-import os
-from torch.utils.data import DataLoader, random_split
-import torch
-import logging
+$ pip install -r requirements.txt
 ```
