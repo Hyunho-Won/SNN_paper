@@ -1,3 +1,5 @@
-# 2022 한국소프트웨어종합학술대회 (KSC2022)
-이벤트 데이터의 전처리 과정이 
-SNN의 학습 성능에 미치는 영향 분석
+# An Analysis of Preprocessing Effect on SNN Training with Event Data
+
+GitHub repository:https://github.com/whh0503/thesis
+
+# Introduction
